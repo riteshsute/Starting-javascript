@@ -1,0 +1,44 @@
+
+
+<html>
+    <body>
+        <style> 
+        form {
+
+            background-color: coral;
+            text-align: center;
+        } 
+        input {
+            font-size: 12px;
+            color: black;
+            width: 800px
+        }
+        </style>
+
+        <h1 title="sumbit the form" > Submit the form  </h1>
+        <form action="/action_page.php"  method="get">
+            <label for="formname">User Name</label><br>
+            <input type="text" name="formname" required/>
+            <br>
+            <label for="mailname">Email</label><br>
+            <input type="email" name="mailname" required/>
+            <br>
+            <label for="password">Password</label><br>
+            <input type="password" name="password" required/>
+            <br>
+            <label for="mobile">Telephone</label><br>
+            <input type="tel" name="mobile" pattern="[0-9]{4}-[0-9]{2}-[0-9]{4}" required/>
+            <br>
+            <button> Sign up</button>
+        
+        </form>
+        
+        <script> 
+            function onsignup(event) {
+            event.preventDefault();
+            console.log(event,target,usename,value)
+        }
+        </script>
+        
+    </body>
+</html>
