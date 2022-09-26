@@ -9,16 +9,32 @@
             <input type="tel" name="phonenumber" />
             <button> Submit </button>
         </form>
+        <ul id="listOfUsers">
         <script>
             function saveTolocal(event) {
                 event.preventDefault();
                 const name = event.target.username.value;
                 const email = event.target.emailId.value;
                 const phonenumber = event.target.phonenumber.value;
-                localStorage.setItem('name', name);
-                localStorage.setItem('email', email);
-                localStorage.setItem('phonenumber', phonenumber)
+                // localStorage.setItem('name', name);
+                // localStorage.setItem('email', email);
+                // localStorage.setItem('phonenumber', phonenumber)
+                const obj = {
+                    name,
+                    email,
+                    phonenumber
+                }
+                localStorage.setItem(obj.email, JSON.stringify(obj));
+                showNewUserOnScreen(obj)
             }
+
+            function showNewUserOnScreen(user){
+                const parentNode = document.getElementById('listOfUsers');
+                const childHTML  = `<li> ${user.name} - ${user.email} </li>`;
+
+                parentNode.innerHTML =  parentNode.innerHTML + childHTML;
+            }    
         </script>
+        <script> src= main.js </script>
     </body>
 </html>
