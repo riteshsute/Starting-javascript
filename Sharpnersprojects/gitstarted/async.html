@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            console.log('person1: Shows ticket');
+            console.log('person2: Shows ticket');
+
+            const promiseWifeBringingTicket = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('ticket');
+                }, 3000);
+            })
+
+            const getPopCorn = promiseWifeBringingTicket.then((t) => {
+                console.log('wife: i have the Tickets');
+                console.log('husband: we should go in');
+                console.log('wife: i want popcorn');
+                return new Promise((resolve, reject) => resolve(`${t} Popcorn`))
+            })
+
+            const getButter = getPopCorn.then((t) => {
+                console.log('husband: I got some Popcorn');
+                console.log('husband: we should go in');
+                console.log('wife: i want Butter on Popcorn');
+                return new Promise((resolve, reject) => resolve(`${t} Butter`))
+            })
+
+            const getColdDrinks = getButter.then((t) => {
+                console.log('wife: also i wnat some cold drink');
+                console.log('husband: here is the all stuff');
+                console.log('husband: now, we should go in');
+                console.log('wife: yes!');
+                return new Promise((resolve, reject) => resolve(`${t} cold drink`))
+            })
+
+
+            getColdDrinks.then((t) => console.log(t));
+
+            console.log('person4: Shows ticket');
+            console.log('person5: Shows ticket');
+        </script>
+
+    </body>
+</html>
