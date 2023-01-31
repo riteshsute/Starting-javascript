@@ -10,6 +10,6 @@ const Cart = sequelize.define('cart', {
     primaryKey: true
   }
 })
-//   
+ 
 
-  module.exports = Cart;
+module.exports = Cart;
